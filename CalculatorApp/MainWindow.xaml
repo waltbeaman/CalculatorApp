@@ -1,0 +1,95 @@
+﻿<Window x:Class="CalculatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorApp"
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Title="Super Simple Calculator" Height="535" Width="315">
+
+   
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+
+
+
+
+        <!-- Row 1 -->
+        <TextBox x:Name="calcTextBox" Height="117" TextWrapping="Wrap" MinWidth="200" Background="#FF777575" Text="0"
+                 SelectionOpacity="6" TextAlignment="Right" FontSize="48" TextChanged="calcTextBox_TextChanged"
+                 Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Margin="5,5,5,5" Style="{DynamicResource RoundTextBox}"/>
+        
+        <!-- Row 2 -->
+        <Button x:Name="clearCurrent" Content="CE" Height="60" Width="60"  
+                Grid.Column="2" Grid.Row="2" FontSize="20" Background="#FF777575" Margin="5,5,5,5" Style="{DynamicResource RoundButton}" Click="clearCurrent_Click"/>
+        <Button x:Name="clearButton" Content="C" Height="60" Width="60" Click="Clear_Click" 
+                Grid.Column="3" Grid.Row="2" FontSize="20" Background="#FF777575" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="backSpaceButton" Content="Del" Height="60" Width="60" 
+                Grid.Column="4" Grid.Row="2" FontSize="20" Background="#FF777575" Margin="5,5,5,5" Style="{DynamicResource RoundButton}" Click="backSpaceButton_Click"/>
+        <Button x:Name="addButton" Content="+" Height="60" Width="60" Click="Add_Click" 
+                Grid.Row="2" Grid.Column="5" FontSize="20" Background="#FF777575" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+
+        <!-- Row 3 -->
+        <Button x:Name="sevenButton" Content="7" Height="60" Width="60" Click="seven_Click" FontSize="20"
+                Grid.Row="3" Grid.Column="2" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="eightButton" Content="8" Height="60" Width="60" Click="eight_Click" FontSize="20"
+                Grid.Row="3" Grid.Column="3" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="nineButton" Content="9" Height="60" Width="60" Click="nine_Click" FontSize="20"
+                Grid.Row="3" Grid.Column="4" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="subtractButton" Content="-" Height="60" Width="60" Click="Subtract_Click" FontSize="20" Background="#FF777575"
+                Grid.Row="3" Grid.Column="5" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+
+        <!-- Row 4 -->
+        <Button x:Name="fourButton" Content="4" Height="60" Width="60" Click="four_Click" FontSize="20"
+                Grid.Row="4" Grid.Column="2" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="fiveButton" Content="5" Height="60" Width="60" Click="five_Click" FontSize="20"
+                Grid.Row="4" Grid.Column="3" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="sixButton" Content="6" Height="60" Width="60" Click="six_Click" FontSize="20"
+                Grid.Row="4" Grid.Column="4" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="multiplyButton" Content="×" Height="60" Width="60" Click="Multiply_Click" FontSize="20" Background="#FF777575"
+                Grid.Row="4" Grid.Column="5" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+
+        <!-- Row 5 -->
+        <Button x:Name="oneButton" Content="1" Height="60" Width="60" Click="one_Click" FontSize="20"
+                Grid.Row="5" Grid.Column="2" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="twoButton" Content="2" Height="60" Width="60" Click="two_Click" FontSize="20"
+                Grid.Row="5" Grid.Column="3" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="threeButton" Content="3" Height="60" Width="60" Click="three_Click" FontSize="20"
+                Grid.Row="5" Grid.Column="4" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="divideButton" Content="÷" Height="60"  Width="60" Click="Divide_Click" FontSize="20" Background="#FF777575"
+                Grid.Row="5" Grid.Column="5" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+
+        <!-- Row 6 -->
+        <Button x:Name="positiveNegativeButton" Content="+/-" Height="60" Width="60" FontSize="20"
+                Grid.Row="6" Grid.Column="2" Margin="5,5,5,5" Style="{DynamicResource RoundButton}" Click="positiveNegativeButton_Click"/>
+        <Button x:Name="zeroButton" Content="0" Height="60" Width="60" Click="zero_Click" FontSize="20"
+                Grid.Row="6" Grid.Column="3" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+        <Button x:Name="calcResultButton" Content="=" Height="60" Width="60" Click="CalcResult_Click" FontSize="20" Background="#FF697DCE"
+                Grid.Row="6" Grid.Column="5" Margin="5,5,5,5" Style="{DynamicResource RoundButton}"/>
+
+    </Grid>
+</Window>
